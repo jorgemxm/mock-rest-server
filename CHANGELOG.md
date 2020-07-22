@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Fix text in logo not vectorized
+- Improve header of README.md with logo
+
 ## [1.0.0] - 2020-07-22
 ### Added
 - Mock REST Server published on [gitlab](https://gitlab.com/GuilleW/mock-rest-server) and [npmjs](https://www.npmjs.com/package/mock-rest-server).

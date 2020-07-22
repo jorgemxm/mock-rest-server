@@ -1,4 +1,7 @@
-# MockRestServer
+<div align="center">
+<img src="https://gitlab.com/GuilleW/mock-rest-server/-/raw/master/.gitlab/MockRestServer.svg"  width="256" height="256" alt="Mock REST Server"/>
+
+#### Mock REST Server is a lightweight (in memory) REST server for unit test. 
 
 [![GitLab pipeline](https://gitlab.com/GuilleW/mock-rest-server/badges/master/pipeline.svg)](https://gitlab.com/GuilleW/mock-rest-server/builds)
 [![GitLab coverage](https://gitlab.com/GuilleW/mock-rest-server/badges/master/coverage.svg)](https://gitlab.com/GuilleW/mock-rest-server/builds)
@@ -6,12 +9,13 @@
 [![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![NPM version](https://img.shields.io/npm/v/mock-rest-server.svg)](https://www.npmjs.com/package/mock-rest-server)
 [![License](https://img.shields.io/npm/l/mock-rest-server.svg)](https://gitlab.com/GuilleW/mock-rest-server/-/blob/master/LICENSE)
+</div>
 
-#### MockRestServer is a lightweight (in memory) REST server for unit test. 
+# Mock REST Server
 
 No configuration needed: Just start it, and test your code!
 
-MockRestServer comes with these features 🚀 :
+Mock REST Server comes with these features 🚀 :
 - [x] Support GET, POST, PUT, PATCH and DELETE HTTP methods
 - [x] Accept and respond with JSON
 - [x] Support real HTTP status code response from REST API

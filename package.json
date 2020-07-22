@@ -1,0 +1,39 @@
+{
+  "name": "mock-rest-server",
+  "version": "1.0.0",
+  "description": "MockRestServer is a lightweight (in memory) REST server for unit test.",
+  "main": "src/MockRestServer.js",
+  "scripts": {
+    "serve": "node bin/mock-rest-server",
+    "test": "mocha --watch",
+    "test:unit": "mocha && standard",
+    "coverage": "nyc npm run test:unit"
+  },
+  "bin": {
+    "mock-rest-server": "./bin/mock-rest-server.js"
+  },
+  "keywords": [
+    "mock",
+    "rest",
+    "restful",
+    "server",
+    "unit",
+    "test",
+    "json",
+    "api",
+    "backend"
+  ],
+  "author": "GuilleW",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "node-fetch": "^2.6.0",
+    "nyc": "^15.1.0",
+    "standard": "^14.3.4"
+  },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/GuilleW/mock-rest-server.git"
+  }
+}

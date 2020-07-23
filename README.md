@@ -1,14 +1,21 @@
 <div align="center">
+<p align="center">
 <img src="https://gitlab.com/GuilleW/mock-rest-server/-/raw/master/.gitlab/MockRestServer.svg"  width="256" height="256" alt="Mock REST Server"/>
+</p>
 
-#### Mock REST Server is a lightweight (in memory) REST server for unit test. 
+<p align="center">
+<h3>Mock REST Server is a lightweight (in memory) REST server for unit test.</h3>
+</p>
 
-[![GitLab pipeline](https://gitlab.com/GuilleW/mock-rest-server/badges/master/pipeline.svg)](https://gitlab.com/GuilleW/mock-rest-server/builds)
-[![GitLab coverage](https://gitlab.com/GuilleW/mock-rest-server/badges/master/coverage.svg)](https://gitlab.com/GuilleW/mock-rest-server/builds)
-[![Known Vulnerabilities](https://snyk.io/test/npm/mock-rest-server/badge.svg)](https://snyk.io/test/npm/mock-rest-server)
-[![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![NPM version](https://img.shields.io/npm/v/mock-rest-server.svg)](https://www.npmjs.com/package/mock-rest-server)
-[![License](https://img.shields.io/npm/l/mock-rest-server.svg)](https://gitlab.com/GuilleW/mock-rest-server/-/blob/master/LICENSE)
+<p align="center">
+<a href="https://gitlab.com/GuilleW/mock-rest-server/builds"><img src="https://gitlab.com/GuilleW/mock-rest-server/badges/master/pipeline.svg" alt="GitLab pipeline"></a>
+<a href="https://gitlab.com/GuilleW/mock-rest-server/builds"><img src="https://gitlab.com/GuilleW/mock-rest-server/badges/master/coverage.svg" alt="GitLab coverage"></a>
+<a href="https://snyk.io/test/npm/mock-rest-server"><img src="https://snyk.io/test/npm/mock-rest-server/badge.svg" alt="Known Vulnerabilities"></a>
+<a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="JavaScript Standard Style"></a>
+<a href="https://www.npmjs.com/package/mock-rest-server"><img src="https://img.shields.io/npm/v/mock-rest-server.svg" alt="NPM version"></a>
+<a href="https://gitlab.com/GuilleW/mock-rest-server/-/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/mock-rest-server.svg" alt="License"></a>
+</p>
+<br/>
 </div>
 
 # Mock REST Server

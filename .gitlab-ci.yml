@@ -1,3 +1,13 @@
+# Create variable here https://gitlab.com/_NAMESPACE_/_PROJECT_/-/settings/ci_cd
+# VARIABLES:
+#   - GIT_PUSH_TOKEN (https://gitlab.com/profile/personal_access_tokens)
+#   - NPM_PUBLISH_TOKEN (https://www.npmjs.com/settings/guillew/tokens/create)
+
+stages:
+  - test
+  - release
+  - publish
+
 # Official framework image. Look for the different tagged releases at:
 # https://hub.docker.com/r/library/node/tags/
 image: node:latest
@@ -8,7 +18,40 @@ cache:
   paths:
     - node_modules/
 
-test:
+Test and coverage:
+  stage: test
   script:
     - npm ci
     - npm run coverage
+
+
+Check CHANGELOG:
+  stage: test
+  only:
+    changes:
+      - CHANGELOG.md
+    variables:
+      - $CI_COMMIT_BRANCH == 'master'
+  except:
+    - pipeline
+  script:
+    - node .gitlab/ci/CheckChangelog.js
+
+
+Release:
+  stage: release
+  only:
+    variables:
+      - $TRIGGER_JOB == 'Release'
+  script:
+    - node .gitlab/ci/Release.js
+
+
+Publish on NPM:
+  stage: publish
+  only:
+    variables:
+      - $TRIGGER_JOB == 'Release'
+  script:
+      - echo '//registry.npmjs.org/:_authToken=${NPM_PUBLISH_TOKEN}' > .npmrc
+      - npm publish

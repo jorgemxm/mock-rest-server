@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2020-08-07
+### Added
+- Use CI for Release and Publish on npmjs.com
+
 ## [1.0.1] - 2020-07-23
 ### Changed
 - Fix text in logo not vectorized

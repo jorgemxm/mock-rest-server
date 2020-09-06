@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.2]
 ### Changed
 - Use [From Changelog to NPM](https://gitlab.com/GuilleW/from-changelog-to-npm) to publish on NPM
+### Fixed
+- watch.yml is missing
 
 ## [1.1.1] - 2020-08-07
 ### Fixed

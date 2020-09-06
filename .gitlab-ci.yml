@@ -2,6 +2,8 @@
 # From Changelog to NPM
 # https://gitlab.com/GuilleW/from-changelog-to-npm
 
+include: 'https://gitlab.com/guillew/from-changelog-to-npm/raw/v1.0.0/watch.yml'
+
 stages:
   - test
   - Release

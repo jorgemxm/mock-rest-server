@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2]
+### Changed
+- Use [From Changelog to NPM](https://gitlab.com/GuilleW/from-changelog-to-npm) to publish on NPM
+
 ## [1.1.1] - 2020-08-07
 ### Fixed
 - Gitlab CI not publishing on npmjs.com

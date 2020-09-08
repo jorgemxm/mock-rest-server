@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.1.3]
+## [1.1.3] - 2020-09-08
 ### Fixed
 - Bad import package name in the README documentation
 

@@ -1,6 +1,6 @@
 {
   "name": "mock-rest-server",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "MockRestServer is a lightweight (in memory) REST server for unit test.",
   "main": "src/MockRestServer.js",
   "scripts": {

@@ -54,7 +54,7 @@ Assuming you're using a module-compatible system (like [webpack](https://webpack
 start MockRestServer on top of your unit test file:
 
 ```js
-import MockRestServer from 'MockRestServer'
+import MockRestServer from 'mock-rest-server'
 
 describe('MockRestServer', function () {
   it('Start server', async () => {

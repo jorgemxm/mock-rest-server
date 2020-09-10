@@ -23,7 +23,7 @@
 No configuration needed: Just start it, and test your code!
 
 Mock REST Server comes with these features 🚀 :
-- [x] Support GET, POST, PUT, PATCH and DELETE HTTP methods
+- [x] Support GET, POST, PUT, PATCH, DELETE and OPTIONS HTTP methods
 - [x] Accept and respond with JSON
 - [x] Support real HTTP status code response from REST API
 - [x] Return HTTP error status codes via api version

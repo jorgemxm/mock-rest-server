@@ -105,6 +105,10 @@ class MockRestServer {
   route (req, res, json) {
     const param = this.paramParser(req)
 
+    if (req.method === 'OPTIONS') {
+      return this.response(req, res, 200, {})
+    }
+
     if (isNaN(param.version)) {
       return this.response(req, res, 400, {})
     }
@@ -184,9 +188,17 @@ class MockRestServer {
   }
 
   response (req, res, statusCode, json) {
+    const headers = {
+      'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Max-Age': 3600,
+      'Content-Type': 'application/json; charset=UTF-8'
+    }
     json = JSON.stringify(json)
     this.trace(`  - ${req.method.padEnd(6, ' ')} ${req.url} → [${statusCode}] ${json}`)
-    res.writeHead(statusCode, { 'Content-Type': 'application/json' })
+    res.writeHead(statusCode, headers)
     res.end(json)
   }
 }

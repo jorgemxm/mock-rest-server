@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Improve unit test: support for HTTP OPTIONS method
 
-## [1.1.4]
+## [1.1.4] - 2020-09-10
 ### Fixed
 - Add support for HTTP OPTIONS method so CORS is happy
 

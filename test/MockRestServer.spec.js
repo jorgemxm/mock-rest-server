@@ -27,6 +27,13 @@ describe('MockRestServer should', function () {
         expect(response.status).to.equal(400)
       })
       .catch(err => console.log(err))
+    await fetch(url, {
+      method: 'OPTIONS'
+    })
+      .then(response => {
+        expect(response.status).to.equal(200)
+      })
+      .catch(err => console.log(err))
   })
   it('Request POST     (Create a resource)', async () => {
     await dataset.forEach(async (item, i) => {

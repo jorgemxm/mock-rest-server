@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.1.5] - 2020-09-18
+## [1.1.5]
 ### Changed
 - Improve unit test: support for HTTP OPTIONS method
 - Improve unit test: if the JSON in body request is not valid JSON, respond with a Bad Request 400 Error.

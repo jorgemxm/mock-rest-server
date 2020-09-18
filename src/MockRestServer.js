@@ -182,7 +182,12 @@ class MockRestServer {
         data += d
       })
       .on('end', () => {
-        const json = data !== '' ? JSON.parse(data) : {}
+        var json = {}
+        try {
+          json = data !== '' ? JSON.parse(data) : {}
+        } catch (e) {
+          return self.response(req, res, 400, {})
+        }
         self.route(req, res, json)
       })
   }

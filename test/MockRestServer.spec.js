@@ -292,6 +292,16 @@ describe('MockRestServer should', function () {
       })
       .catch(err => console.log(err))
   })
+  it('Respond with 400 (Broken JSON → Bad Request Error)', async () => {
+    await fetch(`${url}/v1/articles`, {
+      method: 'POST',
+      body: '{a:1, $b:2}'
+    })
+      .then(response => {
+        expect(response.status).to.equal(400)
+      })
+      .catch(err => console.log(err))
+  })
   it('Stop server', async () => {
     await fetch(url)
       .then(response => {

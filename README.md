@@ -27,6 +27,7 @@ Mock REST Server comes with these features 🚀 :
 - [x] Accept and respond with JSON
 - [x] Support real HTTP status code response from REST API
 - [x] Return HTTP error status codes via api version
+- [x] Fake latency
 - [x] Filtering, sorting and pagination
 - [x] Auto populate tool to fill database, don't waste your time for a REST server!
 
@@ -45,6 +46,7 @@ node_modules/.bin/mock-rest-server
 | ----------- | ----------- | ---- | ------- |
 | `--port=3000` | (Optional) Change server port | `Number` | `3000` |
 | `--silent` | (Optional) Hide server output | `Boolean` | `false` |
+| `--latency` | (Optional) wait before response | `Number` | `0` |
 
 ## Unit test
 
@@ -58,7 +60,7 @@ import MockRestServer from 'mock-rest-server'
 
 describe('MockRestServer', function () {
   it('Start server', async () => {
-    const server = await MockRestServer.start(3000, true)
+    const server = await MockRestServer.start(3000, true, 0)
     server.populate('articles', 30, {
       title: String,
       body: String,

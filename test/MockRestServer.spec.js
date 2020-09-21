@@ -4,6 +4,7 @@ const expect = require('chai').expect
 const MockRestServer = require('../src/MockRestServer')
 const fetch = require('node-fetch')
 const url = 'http://localhost:3000'
+const latency = 500
 var server
 
 const dataset = [
@@ -320,7 +321,7 @@ describe('MockRestServer should', function () {
 })
 
 describe('MockRestServer should run in verbose mode', function () {
-  it('Verbose mode work', async () => {
+  it('Verbose mode works', async () => {
     server = await MockRestServer.start()
     await dataset.forEach(async (item, i) => {
       await fetch(`${url}/v1/articles`, {
@@ -337,4 +338,20 @@ describe('MockRestServer should run in verbose mode', function () {
       await server.stop()
     })
   })
+})
+
+describe(`MockRestServer should respond to query with ${latency}ms latency`, function () {
+  this.timeout(latency + 500)
+  it('Latency OK!', async () => {
+    server = await MockRestServer.start(3000, true, latency)
+    const t1 = new Date().getTime()
+    await fetch(`${url}/v1/articles`)
+      .then(response => {
+        const t2 = new Date().getTime()
+        expect(t2 - t1).to.be.above(latency)
+      })
+      .catch(err => console.log(err))
+    await server.stop()
+  })
+  this.timeout(0)
 })

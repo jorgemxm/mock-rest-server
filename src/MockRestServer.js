@@ -3,9 +3,10 @@ const Database = require('./Database')
 const Randomizer = require('./Randomizer')
 
 class MockRestServer {
-  constructor (port, silent) {
+  constructor (port, silent, latency) {
     this.port = port || 3000
     this.silent = silent || false
+    this.latency = latency || 0
     this.db = new Database()
     this.trace('Mock Rest Server:')
     this.trace('Open a new shell and run some curl on api /v1/:')
@@ -19,8 +20,8 @@ class MockRestServer {
     this.server = this.startServer(this.port)
   }
 
-  static start (port, silent) {
-    return new MockRestServer(port, silent)
+  static start (port, silent, latency) {
+    return new MockRestServer(port, silent, latency)
   }
 
   startServer (port) {
@@ -204,7 +205,7 @@ class MockRestServer {
     json = JSON.stringify(json)
     this.trace(`  - ${req.method.padEnd(6, ' ')} ${req.url} → [${statusCode}] ${json}`)
     res.writeHead(statusCode, headers)
-    res.end(json)
+    setTimeout(() => res.end(json), this.latency)
   }
 }
 

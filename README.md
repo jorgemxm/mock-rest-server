@@ -1,6 +1,6 @@
 <div align="center">
 <p align="center">
-<img src="https://gitlab.com/GuilleW/mock-rest-server/-/raw/master/.gitlab/MockRestServer.svg"  width="256" height="256" alt="Mock REST Server"/>
+<img src="https://raw.githubusercontent.com/jorgemxm/mock-rest-server/master/.gitlab/MockRestServer.svg" width="256" height="256" alt="Mock REST Server"/>
 </p>
 
 <p align="center">
@@ -8,8 +8,6 @@
 </p>
 
 <p align="center">
-<a href="https://gitlab.com/GuilleW/mock-rest-server/builds"><img src="https://gitlab.com/GuilleW/mock-rest-server/badges/master/pipeline.svg" alt="GitLab pipeline"></a>
-<a href="https://gitlab.com/GuilleW/mock-rest-server/builds"><img src="https://gitlab.com/GuilleW/mock-rest-server/badges/master/coverage.svg" alt="GitLab coverage"></a>
 <a href="https://snyk.io/test/npm/mock-rest-server"><img src="https://snyk.io/test/npm/mock-rest-server/badge.svg" alt="Known Vulnerabilities"></a>
 <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="JavaScript Standard Style"></a>
 <a href="https://www.npmjs.com/package/mock-rest-server"><img src="https://img.shields.io/npm/v/mock-rest-server.svg" alt="NPM version"></a>
@@ -33,24 +31,26 @@ Mock REST Server comes with these features 🚀 :
 
 # Changes
 
-All [details of changes](https://gitlab.com/GuilleW/mock-rest-server/-/blob/master/CHANGELOG.md) to this project will be documented in this file.
+All [details of changes](https://github.com/jorgemxm/mock-rest-server/blob/master/CHANGELOG.md) to this project will be documented in this file.
 
 # Installation & Usage
 
 ```sh
-npm i -D mock-rest-server
-node_modules/.bin/mock-rest-server
+npm i -g https://github.com/jorgemxm/mock-rest-server
+node_modules/.bin/mock-server
+  or
+node_modules/.bin/mserver
 ```
 
 | Param name | Description | Type | Default |
 | ----------- | ----------- | ---- | ------- |
-| `--port=3000` | (Optional) Change server port | `Number` | `3000` |
-| `--silent` | (Optional) Hide server output | `Boolean` | `false` |
-| `--latency` | (Optional) wait before response | `Number` | `0` |
+| `-p3000 --port=3000` | (Optional) Change server port | `Number` | `3000` |
+| `-s     --silent` | (Optional) Hide server output | `Boolean` | `false` |
+| `-l500  --latency` | (Optional) wait (ms) before response | `Number` | `0` |
 
 ## Unit test
 
-For more details, look at the [full example](https://gitlab.com/GuilleW/mock-rest-server/-/blob/master/test/MockRestServer.spec.js) from test file.
+For more details, look at the [full example](https://github.com/jorgemxm/mock-rest-server/blob/master/test/MockRestServer.spec.js) from test file.
 
 Assuming you're using a module-compatible system (like [webpack](https://webpack.js.org/)),
 start MockRestServer on top of your unit test file:
@@ -93,28 +93,29 @@ MockRestServer come with (optional) awesome feature that fill database with rand
 
 Start MockRestServer, open a new shell and run some curl on api `/v1/`:
 ```sh
-curl -X POST -d '{"title":"Awesome news!","body":"Some content."}' http://localhost:3000/v1/articles
+curl -X POST -d '{"title":"Awesome movie!","body":"Some content."}' http://localhost:3000/v1/movies
 # {"title":"Awesome news!","body":"Some content.","id":1}
 ```
 
-Now, get your articles with:
+Now, get your movies with:
 ```sh
-curl http://localhost:3000/v1/articles
+curl http://localhost:3000/v1/movies
 # [{"title":"Awesome news!","body":"Some content.","id":1},{"title":"Awesome news!","body":"Some content.","id":2}]
-curl http://localhost:3000/v1/articles/1
+curl http://localhost:3000/v1/movies/1
 # {"title":"Awesome news!","body":"Some content.","id":1}
 ```
 
 Use api `/v[xxx]/` to mock HTTP status codes (403, 404, 500...) from server response:
 ```sh
-curl http://localhost:3000/v403/articles
+curl http://localhost:3000/v401/books
+curl http://localhost:3000/v200/superheroes
 ```
 
 # Contribution
 
 Any help or feedback are really welcome, **no matter how great or small**!
 
-Please make sure to read the [Contributing Guide](https://gitlab.com/GuilleW/mock-rest-server/-/blob/master/CONTRIBUTING.md) before making a pull request.
+Please make sure to read the [Contributing Guide](https://github.com/jorgemxm/mock-rest-server/blob/master/CONTRIBUTING.md) before making a pull request.
 
 # License
 

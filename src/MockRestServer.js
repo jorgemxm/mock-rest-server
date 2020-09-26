@@ -8,14 +8,17 @@ class MockRestServer {
     this.silent = silent || false
     this.latency = latency || 0
     this.db = new Database()
-    this.trace('Mock Rest Server:')
+    this.trace('Mock Rest Server: \n')
     this.trace('Open a new shell and run some curl on api /v1/:')
-    this.trace(`  → curl -X POST -d '{"title":"Awesome news!","body":"Some content."}' http://localhost:${this.port}/v1/articles\n`)
-    this.trace('Now, get your articles with:')
-    this.trace(`  → curl http://localhost:${this.port}/v1/articles`)
-    this.trace(`  → curl http://localhost:${this.port}/v1/articles/1\n`)
+    this.trace(`  → curl -X POST -d '{"title":"Awesome movie!","body":"Some content."}' http://localhost:${this.port}/v1/movies\n`)
+    this.trace('Now, get your movies with:')
+    this.trace(`  → curl http://localhost:${this.port}/v1/movies`)
+    this.trace(`  → curl http://localhost:${this.port}/v1/movies/1\n`)
     this.trace('Use api /v[xxx]/ to mock HTTP status codes (403,404,500...) from server response:')
-    this.trace(`  → curl http://localhost:${this.port}/v403/articles\n`)
+    this.trace(`  → curl http://localhost:${this.port}/v401/books`)
+    this.trace(`  → curl http://localhost:${this.port}/v200/superheroes\n`)
+
+
     this.trace(`Mock Rest Server is ready and listen at port ${this.port}:`)
     this.server = this.startServer(this.port)
   }
@@ -203,7 +206,13 @@ class MockRestServer {
       'Content-Type': 'application/json; charset=UTF-8'
     }
     json = JSON.stringify(json)
+
     this.trace(`  - ${req.method.padEnd(6, ' ')} ${req.url} → [${statusCode}] ${json}`)
+
+    if (statusCode < 100) {
+      return res.end('Invalid Status Code')
+    }
+
     res.writeHead(statusCode, headers)
     setTimeout(() => res.end(json), this.latency)
   }

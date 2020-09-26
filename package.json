@@ -10,7 +10,8 @@
     "coverage": "nyc npm run test:unit"
   },
   "bin": {
-    "mock-rest-server": "./bin/mock-rest-server.js"
+    "mserver": "./bin/mock-rest-server.js",
+    "mock-server": "./bin/mock-rest-server.js"
   },
   "keywords": [
     "mock",
@@ -33,6 +34,10 @@
   },
   "license": "GPL-3.0",
   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgemxm/mock-rest-server.git"
+  },
+  "upstream": {
     "type": "git",
     "url": "git+https://gitlab.com/GuilleW/mock-rest-server.git"
   }
